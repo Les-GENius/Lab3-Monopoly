@@ -10,4 +10,8 @@ public class TestTest {
         assertEquals(true, true);
     }
 
+    @Test
+    public void testBroken() {
+        assertEquals(true, false);
+    }
 }
