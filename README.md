@@ -2,6 +2,16 @@
 
 
 
+**Auteurs:**
+
+**Barros Henriques Chris:** kurisukun
+
+**Daubresse Gaëtan:** Gaetan2907
+
+**Kayoumi Doran:** kayoumido
+
+
+
 ### Workflow Github
 
 
