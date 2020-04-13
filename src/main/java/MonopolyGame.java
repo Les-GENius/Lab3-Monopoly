@@ -8,18 +8,19 @@ public class MonopolyGame {
 
     final static int NB_ROUNDS = 20;
     int roundCount;
-    List<Player> players;
+    ArrayList<Player> players;
     Board board;
-    Die[] dice;
+    ArrayList<Die> dice;
 
     public MonopolyGame(){
         board = new Board();
-        dice = new Die[2];
+        dice = new ArrayList<>(2);
         // between 2 and 8 players
         int nbPlayer = new Random().nextInt(7) + 2;
         players = new ArrayList<>(nbPlayer);
         for(int i = 0; i < nbPlayer; ++i){
-            players.add(new Player(dice, board, new Piece()));
+            String name = "player" + Integer.toString(i);
+            players.add(new Player(name, dice, board, new Piece()));
         }
     }
 

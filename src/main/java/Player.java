@@ -4,8 +4,10 @@ public class Player {
 
     private String name;
     private ArrayList<Die> dies;
+    private Board board;
+    private Piece piece;
 
-    public Player(String name, ArrayList<Die> dies){
+    public Player(String name, ArrayList<Die> dies, Board board, Piece piece){
         this.name = name;
         this.dies = dies;
     }
