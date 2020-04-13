@@ -22,7 +22,7 @@ public class PlayerTest {
     @Test
     void takeTurnTest(){
         ArrayList<Die> dies = new ArrayList<Die> (2);
-        Player player = new Player("Henry", dies);
+        Player player = new Player("Henry", dies, new Board(), new Piece());
         Square oldPosition = player.getPiece().getLocation();
         player.takeTurn();
         Square newPosition = player.getPiece().getLocation();
