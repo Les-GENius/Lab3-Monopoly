@@ -6,7 +6,7 @@ public class Die {
     private static final int nbFaces = 6;
 
     public void roll(){
-        faceValue = random.nextInt(nbFaces+1);
+        faceValue = random.nextInt(nbFaces)+1;
     }
 
     public int getFaceValue(){
