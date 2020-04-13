@@ -15,7 +15,7 @@ public class PlayerTest {
     void playerTest(String name){
         ArrayList<Die> dies = new ArrayList<Die> (2);
 
-        Player player = new Player(name, dies);
+        Player player = new Player(name, dies, new Board(), new Piece());
         assertNotNull(player);
     }
 
