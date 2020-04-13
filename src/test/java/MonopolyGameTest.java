@@ -5,6 +5,6 @@ public class MonopolyGameTest {
     @Test
     public void testMonopolyGame(){
         MonopolyGame monpoly = new MonopolyGame();
-        assertTrue(monpoly.playGame());
+        assertTrue(monpoly.playGame()); 
     }
 }
