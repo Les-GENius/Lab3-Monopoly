@@ -15,8 +15,8 @@ public class PlayerTest {
     @ValueSource(strings = {"Henry", "Paul", "Colette", "Rémi"})
     void playerTest(String name){
         ArrayList<Die> dies = new ArrayList<Die> (2);
-
-        Player player = new Player(name, dies);
+        Piece piece = new Piece("Go");
+        Player player = new Player(name, dies, piece);
         assertNotNull(player);
     }
 
