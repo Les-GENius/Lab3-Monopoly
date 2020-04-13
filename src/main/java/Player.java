@@ -17,12 +17,12 @@ public class Player {
 
     public void takeTurn(){
         System.out.println(name + "'s turn:");
-
         int faceValueTotal = 0;
         for(Die d: dies){
+            d.roll();
             faceValueTotal += d.getFaceValue();
         }
-        System.out.println("    - Dies value:" + faceValueTotal);
+        System.out.println("    - Dies value: " + faceValueTotal);
 
         Square oldLoc = piece.getLocation();
         Square newLoc = board.getSquare(oldLoc, faceValueTotal);
@@ -33,4 +33,5 @@ public class Player {
     public Piece getPiece() {
         return piece;
     }
+
 }
