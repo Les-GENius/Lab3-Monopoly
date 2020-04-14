@@ -20,7 +20,7 @@ public class MonopolyGame {
         players = new ArrayList<>(nbPlayer);
         for(int i = 0; i < nbPlayer; ++i){
             String name = "player" + Integer.toString(i);
-            players.add(new Player(name, dice, board, new Piece("")));
+            players.add(new Player(name, dice, board, new Piece("Car")));
         }
     }
 
