@@ -4,8 +4,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 public class PlayerTest {
@@ -19,6 +18,17 @@ public class PlayerTest {
         Player player = new Player(name, dies, new Board(), new Piece());
         player.takeTurn();
         assertNotNull(player);
+    }
+
+    @Test
+    void takeTurnTest(){
+        ArrayList<Die> dies = new ArrayList<Die> (2);
+        Player player = new Player("Henry", dies, new Board(), new Piece());
+        Square oldPosition = player.getPiece().getLocation();
+        player.takeTurn();
+        Square newPosition = player.getPiece().getLocation();
+
+        assertNotEquals(oldPosition, newPosition);
     }
 
 }
