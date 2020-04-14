@@ -6,8 +6,8 @@ public class PieceTest {
 
     @Test
     void pieceCanMoveTest() {
-        Square src = new Square();
-        Square dest = new Square();
+        Square src = new Square("Go");
+        Square dest = new Square("Square 1");
         Piece p = new Piece("Car");
 
         p.setLocation(src);
