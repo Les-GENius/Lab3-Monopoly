@@ -13,5 +13,8 @@ public class Piece {
 
     public void setLocation(Square location) {
         this.location = location;
+        System.out.println("Piece " + name + " moved to " + location);
     }
+
+
 }

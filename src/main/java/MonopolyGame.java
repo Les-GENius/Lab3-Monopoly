@@ -1,6 +1,4 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 
@@ -23,13 +21,14 @@ public class MonopolyGame {
         int nbPlayer = new Random().nextInt(7) + 2;
         players = new ArrayList<>(nbPlayer);
         for(int i = 0; i < nbPlayer; ++i){
-            String name = "player" + Integer.toString(i);
+            String name = "player" + i;
             players.add(new Player(name, dice, board, PieceNames.Car));
         }
     }
 
     public boolean playGame(){
         for(int i = 0; i < NB_ROUNDS; ++i){
+            System.out.println("--- ROUND " + (i+1) + " ---");
             playRound();
         }
         return true;

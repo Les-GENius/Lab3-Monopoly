@@ -9,15 +9,14 @@ public class Board {
 
     Board(){
         squares = new ArrayList<>(nbSquares);
-        int i = 0;
-        for(Square s: squares){
-            s = new Square(Integer.toString(i));
-            ++i;
+
+        squares.add(0, FIRST);
+        for(int i = 1; i < nbSquares; ++i){
+                squares.add(new Square(Integer.toString(i)));
         }
     }
 
-
     public Square getSquare(Square oldLocation, int faceValueTotal){
-        return squares.get(squares.indexOf(oldLocation) + faceValueTotal);
+        return squares.get((squares.indexOf(oldLocation) + faceValueTotal) % nbSquares);
     }
 }
