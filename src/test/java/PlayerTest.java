@@ -14,9 +14,10 @@ public class PlayerTest {
     @ParameterizedTest
     @ValueSource(strings = {"Henry", "Paul", "Colette", "Rémi"})
     void playerTest(String name){
-        ArrayList<Die> dies = new ArrayList<Die> (2);
+        Die[] dies = new Die[]{new Die(), new Die()}; 
 
         Player player = new Player(name, dies, new Board(), new Piece());
+        player.takeTurn();
         assertNotNull(player);
     }
 

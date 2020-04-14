@@ -3,11 +3,11 @@ import java.util.ArrayList;
 public class Player {
 
     private String name;
-    private ArrayList<Die> dies;
+    private Die[] dies;
     private Board board;
     private Piece piece;
 
-    public Player(String name, ArrayList<Die> dies, Board board, Piece piece){
+    public Player(String name, Die[] dies, Board board, Piece piece){
         this.name = name;
         this.dies = dies;
     }
@@ -17,6 +17,8 @@ public class Player {
 
         int scoreDie = 0;
         for(Die d: dies){
+            d.roll();
+            System.out.println("Dés" + d.getFaceValue());
             scoreDie += d.getFaceValue();
         }
 
