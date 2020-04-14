@@ -19,7 +19,9 @@ public class Player {
             d.roll();
             scoreDie += d.getFaceValue();
         }
+    }
 
+    public void addCash(int cash){
 
     }
 }
