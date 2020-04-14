@@ -16,7 +16,7 @@ public class PlayerTest {
     void playerTest(String name){
         Die[] dies = new Die[]{new Die(), new Die()}; 
 
-        Player player = new Player(name, dies, new Board(), new Piece());
+        Player player = new Player(name, dies, new Board(), new Piece("Car"));
         player.takeTurn();
         assertNotNull(player);
     }
