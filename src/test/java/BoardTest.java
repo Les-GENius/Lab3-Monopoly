@@ -14,7 +14,7 @@ public class BoardTest {
                 () -> {
                     Board board = new Board();
                     assertEquals(board.getSquare(Board.FIRST, 0), Board.FIRST);
-                    assertEquals(board.getSquare(Board.FIRST, 10).getName(), "10");
+                    assertEquals(board.getSquare(Board.FIRST, 10).getName(), "Square 10");
                 });
     }
 }
