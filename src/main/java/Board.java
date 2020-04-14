@@ -18,6 +18,6 @@ public class Board {
 
 
     public Square getSquare(Square oldLocation, int faceValueTotal){
-        return squares.get(squares.indexOf(oldLocation) + faceValueTotal);
+        return squares.get((squares.indexOf(oldLocation) + faceValueTotal) % nbSquares);
     }
 }

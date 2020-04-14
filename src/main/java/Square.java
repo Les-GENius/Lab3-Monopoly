@@ -5,9 +5,9 @@ public abstract class Square {
         this.name = name;
     }
 
-    public String getName(){
-        return name;
+    public String toString(){
+        return  name;
     }
 
-    abstract public void landedOn(Player p);
+ abstract public void landedOn(Player p);
 }
