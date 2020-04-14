@@ -8,18 +8,23 @@ public class Player {
     public Player(String name, Die[] dies, Board board, MonopolyGame.PieceNames piece){
         this.name = name;
         this.dies = dies;
+        this.board = board;
         this.piece = new Piece(piece.name(), Board.FIRST);
     }
 
     public void takeTurn(){
         System.out.println(name + "'s turn");
 
-        int scoreDie = 0;
+        int faceValueTotal = 0;
         for(Die d: dies){
             d.roll();
-            scoreDie += d.getFaceValue();
+            faceValueTotal += d.getFaceValue();
         }
+        System.out.println("    - Dies value: " + faceValueTotal);
 
-
+        Square oldLoc = piece.getLocation();
+        Square newLoc = board.getSquare(oldLoc, faceValueTotal);
+        piece.setLocation(newLoc);
     }
+
 }

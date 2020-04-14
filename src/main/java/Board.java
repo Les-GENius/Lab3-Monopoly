@@ -13,11 +13,11 @@ public class Board {
 
         for(int i = 1; i < nbSquares; ++i){
             squares.add(i, new Square("Square " + i));
+
         }
     }
 
-
     public Square getSquare(Square oldLocation, int faceValueTotal){
-        return squares.get(squares.indexOf(oldLocation) + faceValueTotal);
+        return squares.get((squares.indexOf(oldLocation) + faceValueTotal) % nbSquares);
     }
 }
