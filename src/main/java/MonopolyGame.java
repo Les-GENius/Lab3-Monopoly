@@ -6,6 +6,10 @@ import java.util.Random;
 
 public class MonopolyGame {
 
+    public enum PieceNames {
+        Car
+    }
+
     final static int NB_ROUNDS = 20;
     int roundCount;
     ArrayList<Player> players;
