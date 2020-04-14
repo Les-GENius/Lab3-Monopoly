@@ -6,7 +6,7 @@ public class PieceTest {
 
     @Test
     void pieceCanMoveTest() {
-        Square dest = new Square("Square 1");
+        Square dest = new RegularSquare("Square 1");
         Piece p = new Piece("Car", Board.FIRST);
 
         p.setLocation(dest);
