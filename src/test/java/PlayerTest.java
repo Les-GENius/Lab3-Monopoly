@@ -13,7 +13,7 @@ public class PlayerTest {
     void playerTest(String name){
         Die[] dies = new Die[]{new Die(), new Die()}; 
 
-        Player player = new Player(name, dies, new Board(), new Piece("Car"));
+        Player player = new Player(name, dies, new Board(), MonopolyGame.PieceNames.Car);
         player.takeTurn();
         assertNotNull(player);
     }

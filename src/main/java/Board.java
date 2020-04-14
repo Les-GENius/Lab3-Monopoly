@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class Board {
 
+    public static final Square FIRST = new Square("Go");
 
     private ArrayList<Square> squares;
     private static int nbSquares = 40;

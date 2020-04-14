@@ -5,9 +5,10 @@ public class Player {
     private Board board;
     private Piece piece;
 
-    public Player(String name, Die[] dies, Board board, Piece piece){
+    public Player(String name, Die[] dies, Board board, MonopolyGame.PieceNames piece){
         this.name = name;
         this.dies = dies;
+        this.piece = new Piece(piece.name(), Board.FIRST);
     }
 
     public void takeTurn(){
