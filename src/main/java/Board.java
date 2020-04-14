@@ -9,10 +9,11 @@ public class Board {
 
     Board(){
         squares = new ArrayList<>(nbSquares);
-
         squares.add(0, FIRST);
+
         for(int i = 1; i < nbSquares; ++i){
-                squares.add(new Square(Integer.toString(i)));
+            squares.add(i, new Square("Square " + i));
+
         }
     }
 

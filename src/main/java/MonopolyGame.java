@@ -14,16 +14,18 @@ public class MonopolyGame {
     Board board;
     Die[] dice;
 
-    public MonopolyGame(){
-        board = new Board();
-        dice = new Die[]{new Die(), new Die()};
-        // between 2 and 8 players
-        int nbPlayer = new Random().nextInt(7) + 2;
-        players = new ArrayList<>(nbPlayer);
-        for(int i = 0; i < nbPlayer; ++i){
-            String name = "player" + i;
-            players.add(new Player(name, dice, board, PieceNames.Car));
+
+    public MonopolyGame(int nbPlayer) throws Exception {
+        if(nbPlayer >= 2 && nbPlayer <= 8){
+            board = new Board();
+            dice = new Die[]{new Die(), new Die()};
+            players = new ArrayList<>(nbPlayer);
+            for(int i = 0; i < nbPlayer; ++i){
+                String name = "player" + i;
+                players.add(new Player(name, dice, board, PieceNames.Car));
+            }
         }
+        else throw new IllegalArgumentException("Wrong nbPlayer input (between 2 and 8)");
     }
 
     public boolean playGame(){
@@ -38,10 +40,5 @@ public class MonopolyGame {
         for(Player player : players){
             player.takeTurn();
         }
-    }
-
-    public static void main(String[] args) {
-        MonopolyGame monopoly = new MonopolyGame();
-        monopoly.playGame();
     }
 }
