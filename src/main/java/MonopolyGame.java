@@ -10,11 +10,11 @@ public class MonopolyGame {
     int roundCount;
     ArrayList<Player> players;
     Board board;
-    ArrayList<Die> dice;
+    Die[] dice;
 
     public MonopolyGame(){
         board = new Board();
-        dice = new ArrayList<>(2);
+        dice = new Die[]{new Die(), new Die()};
         // between 2 and 8 players
         int nbPlayer = new Random().nextInt(7) + 2;
         players = new ArrayList<>(nbPlayer);
