@@ -40,9 +40,4 @@ public class MonopolyGame {
             player.takeTurn();
         }
     }
-
-    public static void main(String[] args) {
-        MonopolyGame monopoly = new MonopolyGame();
-        monopoly.playGame();
-    }
 }

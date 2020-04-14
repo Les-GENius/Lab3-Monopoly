@@ -17,7 +17,6 @@ public class Player {
         int scoreDie = 0;
         for(Die d: dies){
             d.roll();
-            System.out.println("Dés" + d.getFaceValue());
             scoreDie += d.getFaceValue();
         }
 
