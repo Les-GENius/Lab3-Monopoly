@@ -20,21 +20,21 @@ public class PlayerTest {
     @ParameterizedTest
     @ValueSource(strings = {"Henry", "Paul", "Colette", "Rémi"})
     void playerTest(String name){
-        Player player = new Player(name, this.dies, this.board, MonopolyGame.PieceNames.Car);
+        Player player = new Player(name, this.dies, this.board);
         player.takeTurn();
         assertNotNull(player);
     }
 
     @Test
     void playerHasInitialCash() {
-        Player player = new Player("Bob", this.dies, this.board, MonopolyGame.PieceNames.Car);
+        Player player = new Player("Bob", this.dies, this.board);
 
         assertEquals(MonopolyGame.INITIAL_CASH, player.getNetWorth());
     }
 
     @Test
     void playerCanGainCash() {
-        Player player = new Player("Bob", this.dies, this.board, MonopolyGame.PieceNames.Car);
+        Player player = new Player("Bob", this.dies, this.board);
         player.addCash(500);
 
         assertEquals(MonopolyGame.INITIAL_CASH+500, player.getNetWorth());
@@ -42,7 +42,7 @@ public class PlayerTest {
 
     @Test
     void playerCanLooseCash() {
-        Player player = new Player("Bob", this.dies, this.board, MonopolyGame.PieceNames.Car);
+        Player player = new Player("Bob", this.dies, this.board);
         player.reduceCash(500);
 
         assertEquals(MonopolyGame.INITIAL_CASH-500, player.getNetWorth());
