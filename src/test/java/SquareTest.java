@@ -11,7 +11,17 @@ public class SquareTest {
     }
     @Test
     public void testGoSquare(){
-        Square go = new GoSquare("Go");
+        Square go = Board.FIRST;
         assertEquals(go.toString(), "Go");
+    }
+    @Test
+    public void testGoJailSquare(){
+        Square jail = Board.JAIL;
+        assertEquals(jail.toString(), "Jail");
+    }
+    @Test
+    public void testIncomeTaxSquare(){
+        Square go = new IncomeTaxSquare("Tax");
+        assertEquals(go.toString(), "Tax");
     }
 }

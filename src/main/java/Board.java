@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class Board {
 
     public static final Square FIRST = new GoSquare("Go");
+    public static final Square JAIL = new GoToJailSquare("Jail");
 
     private ArrayList<Square> squares;
     private static int nbSquares = 40;
