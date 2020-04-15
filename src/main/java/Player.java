@@ -30,11 +30,11 @@ public class Player {
     }
 
     public void addCash(double cash){
-
+        this.cash += cash;
     }
 
     public void reduceCash(double cash){
-
+        this.cash -= cash;
     }
 
     public double getNetWorth(){
