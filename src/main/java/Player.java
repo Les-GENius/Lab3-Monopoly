@@ -27,4 +27,7 @@ public class Player {
         piece.setLocation(newLoc);
     }
 
+    public void addCash(int cash){
+
+    }
 }
