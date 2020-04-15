@@ -27,7 +27,19 @@ public class Player {
         piece.setLocation(newLoc);
     }
 
-    public void addCash(int cash){
+    public void addCash(double cash){
+
+    }
+
+    public void reduceCash(double cash){
+
+    }
+
+    public double getNetWorth(){
+        return 0.0;
+    }
+
+    public void setLocation(Square location){
 
     }
 }
