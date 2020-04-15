@@ -4,10 +4,6 @@ import java.util.Random;
 
 public class MonopolyGame {
 
-    public enum PieceNames {
-        Car
-    }
-
     final static int NB_ROUNDS = 20;
     final static double INITIAL_CASH = 1500;
     int roundCount;
@@ -23,7 +19,7 @@ public class MonopolyGame {
             players = new ArrayList<>(nbPlayer);
             for(int i = 0; i < nbPlayer; ++i){
                 String name = "player" + i;
-                players.add(new Player(name, cup, board, PieceNames.Car));
+                players.add(new Player(name, cup, board));
             }
         }
         else throw new IllegalArgumentException("Wrong nbPlayer input (between 2 and 8)");
