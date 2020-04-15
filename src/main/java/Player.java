@@ -3,14 +3,14 @@ public class Player {
     private String name;
     private Die[] dies;
     private Board board;
-    private Square location;
+    private Piece piece;
     private double cash;
 
-    public Player(String name, Die[] dies, Board board){
+    public Player(String name, Die[] dies, Board board, MonopolyGame.PieceNames piece){
         this.name = name;
         this.dies = dies;
         this.board = board;
-        this.location = Board.FIRST;
+        this.piece = new Piece(piece.name(), Board.FIRST);
         this.cash = MonopolyGame.INITIAL_CASH;
     }
 
@@ -24,8 +24,9 @@ public class Player {
         }
         System.out.println("    - Dies value: " + faceValueTotal);
 
-        // update the player location
-        this.location = board.getSquare(this.location, faceValueTotal);
+        Square oldLoc = piece.getLocation();
+        Square newLoc = board.getSquare(oldLoc, faceValueTotal);
+        piece.setLocation(newLoc);
     }
 
     public void addCash(double cash){
@@ -41,10 +42,6 @@ public class Player {
     }
 
     public void setLocation(Square location){
-        this.location = location;
-    }
 
-    public Square getLocation() {
-        return this.location;
     }
 }

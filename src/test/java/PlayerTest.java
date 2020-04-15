@@ -20,21 +20,21 @@ public class PlayerTest {
     @ParameterizedTest
     @ValueSource(strings = {"Henry", "Paul", "Colette", "Rémi"})
     void playerTest(String name){
-        Player player = new Player(name, this.dies, this.board);
+        Player player = new Player(name, this.dies, this.board, MonopolyGame.PieceNames.Car);
         player.takeTurn();
         assertNotNull(player);
     }
 
     @Test
     void playerHasInitialCash() {
-        Player player = new Player("Bob", this.dies, this.board);
+        Player player = new Player("Bob", this.dies, this.board, MonopolyGame.PieceNames.Car);
 
         assertEquals(MonopolyGame.INITIAL_CASH, player.getNetWorth());
     }
 
     @Test
     void playerCanGainCash() {
-        Player player = new Player("Bob", this.dies, this.board);
+        Player player = new Player("Bob", this.dies, this.board, MonopolyGame.PieceNames.Car);
         player.addCash(500);
 
         assertEquals(MonopolyGame.INITIAL_CASH+500, player.getNetWorth());
@@ -42,18 +42,9 @@ public class PlayerTest {
 
     @Test
     void playerCanLooseCash() {
-        Player player = new Player("Bob", this.dies, this.board);
+        Player player = new Player("Bob", this.dies, this.board, MonopolyGame.PieceNames.Car);
         player.reduceCash(500);
 
         assertEquals(MonopolyGame.INITIAL_CASH-500, player.getNetWorth());
-    }
-
-    @Test
-    void playerCanChangeLocation() {
-        Player player = new Player("Bob", this.dies, this.board);
-        Square newLoc = new RegularSquare("Square Test");
-        player.setLocation(newLoc);
-
-        assertSame(newLoc, player.getLocation());
     }
 }
