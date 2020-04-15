@@ -1,14 +1,15 @@
 public class Player {
 
     private String name;
-    private Die[] dies;
+    private Cup cup;
     private Board board;
     private Square location;
     private double cash;
 
-    public Player(String name, Die[] dies, Board board){
+  
+    public Player(String name, Cup cup, Board board){
         this.name = name;
-        this.dies = dies;
+        this.cup = cup;
         this.board = board;
         this.location = Board.FIRST;
         this.cash = MonopolyGame.INITIAL_CASH;
@@ -18,10 +19,9 @@ public class Player {
         System.out.println(name + "'s turn");
 
         int faceValueTotal = 0;
-        for(Die d: dies){
-            d.roll();
-            faceValueTotal += d.getFaceValue();
-        }
+
+        cup.roll();
+        faceValueTotal = cup.getTotal();
         System.out.println("    - Dies value: " + faceValueTotal);
 
         // update the player location
