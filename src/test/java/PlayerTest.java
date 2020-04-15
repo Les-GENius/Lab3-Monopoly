@@ -31,4 +31,20 @@ public class PlayerTest {
 
         assertEquals(MonopolyGame.INITIAL_CASH, player.getNetWorth());
     }
+
+    @Test
+    void playerCanGainCash() {
+        Player player = new Player("Bob", this.dies, this.board, MonopolyGame.PieceNames.Car);
+        player.addCash(500);
+
+        assertEquals(MonopolyGame.INITIAL_CASH+500, player.getNetWorth());
+    }
+
+    @Test
+    void playerCanLooseCash() {
+        Player player = new Player("Bob", this.dies, this.board, MonopolyGame.PieceNames.Car);
+        player.reduceCash(500);
+
+        assertEquals(MonopolyGame.INITIAL_CASH-500, player.getNetWorth());
+    }
 }
