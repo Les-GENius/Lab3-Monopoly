@@ -1,14 +1,14 @@
 public class Player {
 
     private String name;
-    private Die[] dies;
+    private Cup cup;
     private Board board;
     private Piece piece;
     private double cash;
 
-    public Player(String name, Die[] dies, Board board, MonopolyGame.PieceNames piece){
+    public Player(String name, Cup cup, Board board, MonopolyGame.PieceNames piece){
         this.name = name;
-        this.dies = dies;
+        this.cup = cup;
         this.board = board;
         this.piece = new Piece(piece.name(), Board.FIRST);
         this.cash = MonopolyGame.INITIAL_CASH;
@@ -18,10 +18,9 @@ public class Player {
         System.out.println(name + "'s turn");
 
         int faceValueTotal = 0;
-        for(Die d: dies){
-            d.roll();
-            faceValueTotal += d.getFaceValue();
-        }
+
+        cup.roll();
+        faceValueTotal = cup.getTotal();
         System.out.println("    - Dies value: " + faceValueTotal);
 
         Square oldLoc = piece.getLocation();
