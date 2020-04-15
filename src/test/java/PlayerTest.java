@@ -25,4 +25,10 @@ public class PlayerTest {
         assertNotNull(player);
     }
 
+    @Test
+    void playerHasInitialCash() {
+        Player player = new Player("Bob", this.dies, this.board, MonopolyGame.PieceNames.Car);
+
+        assertEquals(MonopolyGame.INITIAL_CASH, player.getNetWorth());
+    }
 }
