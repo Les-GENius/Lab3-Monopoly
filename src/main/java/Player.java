@@ -38,7 +38,7 @@ public class Player {
     }
 
     public double getNetWorth(){
-        return 0.0;
+        return this.cash;
     }
 
     public void setLocation(Square location){
