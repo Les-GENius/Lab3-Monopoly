@@ -4,12 +4,14 @@ public class Player {
     private Die[] dies;
     private Board board;
     private Piece piece;
+    private double cash;
 
     public Player(String name, Die[] dies, Board board, MonopolyGame.PieceNames piece){
         this.name = name;
         this.dies = dies;
         this.board = board;
         this.piece = new Piece(piece.name(), Board.FIRST);
+        this.cash = MonopolyGame.INITIAL_CASH;
     }
 
     public void takeTurn(){
@@ -28,15 +30,15 @@ public class Player {
     }
 
     public void addCash(double cash){
-
+        this.cash += cash;
     }
 
     public void reduceCash(double cash){
-
+        this.cash -= cash;
     }
 
     public double getNetWorth(){
-        return 0.0;
+        return this.cash;
     }
 
     public void setLocation(Square location){
