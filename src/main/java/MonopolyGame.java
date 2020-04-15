@@ -9,6 +9,7 @@ public class MonopolyGame {
     }
 
     final static int NB_ROUNDS = 20;
+    final static double INITIAL_CASH = 1500;
     int roundCount;
     ArrayList<Player> players;
     Board board;
