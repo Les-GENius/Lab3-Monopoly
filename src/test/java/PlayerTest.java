@@ -47,4 +47,13 @@ public class PlayerTest {
 
         assertEquals(MonopolyGame.INITIAL_CASH-500, player.getNetWorth());
     }
+
+    @Test
+    void playerCanChangeLocation() {
+        Player player = new Player("Bob", this.dies, this.board);
+        Square newLoc = new RegularSquare("Square Test");
+        player.setLocation(newLoc);
+
+        assertSame(newLoc, player.getLocation());
+    }
 }
