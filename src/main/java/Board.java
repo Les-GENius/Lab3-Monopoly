@@ -4,16 +4,26 @@ public class Board {
 
     public static final Square FIRST = new GoSquare("Go");
     public static final Square JAIL = new GoToJailSquare("Jail");
+    public static final Square TAX = new IncomeTaxSquare("Tax");
 
     private ArrayList<Square> squares;
     private static int nbSquares = 40;
 
     Board(){
         squares = new ArrayList<>(nbSquares);
-        squares.add(0, FIRST);
-
-        for(int i = 1; i < nbSquares; ++i){
-            squares.add(i, new RegularSquare("Square " + i));
+        
+        for(int i = 0; i < nbSquares; ++i){
+            if(i == 0){
+                squares.add(0, FIRST);
+            }
+            else if(i == 4 ){
+                squares.add(i, TAX);
+            }
+            else if(i == 30){
+                squares.add(i, JAIL);
+            }else{
+                squares.add(i, new RegularSquare("Square " + i));
+            }
         }
     }
 
