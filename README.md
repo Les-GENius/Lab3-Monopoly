@@ -12,6 +12,20 @@
 
 
 
+### NOTA BENE
+
+Pour le rendu de ce laboratoire, chaque début d’itération est trouvable via son hash correspondant:
+
+
+
+<u>Début de l’itération 1:</u> 49bc331f8b9b31ee464384670446df25e3e66875
+
+<u>Début de l’itération 2:</u> 9c5ad51dc2065ac7bc8b9ef6564f583ce50e27ca
+
+
+
+
+
 ### Workflow Github
 
 
